@@ -1,0 +1,9 @@
+$file = "resulttest.txt";
+$text = file_get_contents($file);
+$newFile = fopen("result.php", 'w');
+fwrite($newFile, $text);
+fclose($file);
+
+unlink('php/result.php');
+
+<input type="hidden" name="m_userid" value="<?php echo($_SESSION['logged_user']->id) ?>">
